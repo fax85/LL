@@ -19,10 +19,9 @@ def isbig(x):
 def simplequake(q):
     return {
         "place": q["properties"]["place"],
-        "mag":  q["properties"]["mag"],
-        "link":  q["properties"]["url"],
-        "date": str(datetime.date.fromtimestamp(
-            int(q["properties"]["time"])/1000))
+        "mag": q["properties"]["mag"],
+        "link": q["properties"]["url"],
+        "date": str(datetime.date.fromtimestamp(int(q["properties"]["time"]) / 1000)),
     }
 
 

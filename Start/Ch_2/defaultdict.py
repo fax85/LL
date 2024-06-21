@@ -4,8 +4,7 @@ from collections import defaultdict
 
 
 # define a list of items that we want to count
-fruits = ['apple', 'pear', 'orange', 'banana',
-          'apple', 'grape', 'banana', 'banana']
+fruits = ["apple", "pear", "orange", "banana", "apple", "grape", "banana", "banana"]
 
 # TODO: use a dictionary to count each element
 fruitCounter = dict()

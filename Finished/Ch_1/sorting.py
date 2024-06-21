@@ -24,11 +24,11 @@ with open("../../30DayQuakes.json", "r") as datafile:
 
 def getmag(dataitem):
     magnitude = dataitem["properties"]["mag"]
-    if (magnitude is None):
+    if magnitude is None:
         magnitude = 0
     return float(magnitude)
 
 
-data['features'].sort(key=getmag, reverse=True)
+data["features"].sort(key=getmag, reverse=True)
 for i in range(0, 10):
-    print(data['features'][i]['properties']['place'])
+    print(data["features"][i]["properties"]["place"])

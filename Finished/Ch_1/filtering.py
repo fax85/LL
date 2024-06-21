@@ -42,7 +42,7 @@ def notAQuake(q):
     return True
 
 
-events = list(filter(notAQuake, data['features']))
+events = list(filter(notAQuake, data["features"]))
 print(f"Total non-quake events: {len(events)}")
 for i in range(0, 10):
     print(events[i]["properties"]["type"])

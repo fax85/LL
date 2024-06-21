@@ -24,13 +24,18 @@ rows = []
 
 # populate the rows with the resulting quake data
 for quake in largequakes:
-    thedate = datetime.date.fromtimestamp(
-        int(quake["properties"]["time"])/1000)
-    rows.append([quake["properties"]["place"], quake["properties"]
-                ["mag"], thedate, quake["properties"]["url"]])
+    thedate = datetime.date.fromtimestamp(int(quake["properties"]["time"]) / 1000)
+    rows.append(
+        [
+            quake["properties"]["place"],
+            quake["properties"]["mag"],
+            thedate,
+            quake["properties"]["url"],
+        ]
+    )
 
 # write the results to the CSV file
-with open("largequakes.csv", "w", newline='', encoding="utf-8") as csvfile:
-    writer = csv.writer(csvfile, delimiter=',')
+with open("largequakes.csv", "w", newline="", encoding="utf-8") as csvfile:
+    writer = csv.writer(csvfile, delimiter=",")
     writer.writerow(header)
     writer.writerows(rows)

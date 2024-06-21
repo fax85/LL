@@ -17,7 +17,7 @@ with open("largequakes.csv", "r") as csvfile:
     sniffer = csv.Sniffer()
     sample = csvfile.read(1024)
     csvfile.seek(0)
-    if (sniffer.has_header(sample)):
+    if sniffer.has_header(sample):
         next(reader)
 
     # iterate over each row
@@ -25,11 +25,8 @@ with open("largequakes.csv", "r") as csvfile:
         # print(row)
 
         # add the data to our list
-        result.append({
-            "place": row[0],
-            "magnitude": row[1],
-            "date": row[2],
-            "link": row[3]
-        })
+        result.append(
+            {"place": row[0], "magnitude": row[1], "date": row[2], "link": row[3]}
+        )
 
 pprint.pp(result)

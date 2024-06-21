@@ -29,19 +29,22 @@ header = ["Magnitude", "Place", "Felt Reports", "Date", "Link"]
 rows = []
 
 for event in significantevents:
-    thedate = datetime.date.fromtimestamp(
-        int(event["properties"]["time"]) / 1000)
+    thedate = datetime.date.fromtimestamp(int(event["properties"]["time"]) / 1000)
     lat = event["geometry"]["coordinates"][1]
     long = event["geometry"]["coordinates"][0]
     gmaplink = f"https://maps.google.com/maps/search/?api=1&query={lat}%2C{long}"
 
-    rows.append([event["properties"]["mag"],
-                event["properties"]["place"],
-                0 if event["properties"]["felt"] is None else event["properties"]["felt"],
-                thedate,
-                gmaplink])
+    rows.append(
+        [
+            event["properties"]["mag"],
+            event["properties"]["place"],
+            0 if event["properties"]["felt"] is None else event["properties"]["felt"],
+            thedate,
+            gmaplink,
+        ]
+    )
 
 with open("significantevents.csv", "w") as csvfile:
-    writer = csv.writer(csvfile, delimiter=',')
+    writer = csv.writer(csvfile, delimiter=",")
     writer.writerow(header)
     writer.writerows(rows)

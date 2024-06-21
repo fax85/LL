@@ -7,9 +7,7 @@ import logging
 # Use basicConfig to configure logging
 # this is only executed once, subsequent calls to
 # basicConfig will have no effect
-logging.basicConfig(level=logging.DEBUG,
-                    filemode="w",
-                    filename="output.log")
+logging.basicConfig(level=logging.DEBUG, filemode="w", filename="output.log")
 
 # Try out each of the log levels
 logging.debug("This is a debug-level log message")

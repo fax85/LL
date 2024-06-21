@@ -8,4 +8,3 @@
 # TODO: Try out each of the log levels
 
 # TODO: Output formatted strings to the log
-

@@ -19,7 +19,7 @@ print(f"The minimum value is: {max(strings,key=len)}")
 # define a custom "key" function to extract a data field
 def getmag(dataitem):
     magnitude = dataitem["properties"]["mag"]
-    if (magnitude is None):
+    if magnitude is None:
         magnitude = 0
     return float(magnitude)
 

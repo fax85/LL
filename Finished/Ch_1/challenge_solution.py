@@ -21,7 +21,7 @@ print(f"Total quakes: {data['metadata']['count']}")
 # 2: This is a straightforward filtering process
 def feltreport(q):
     f = q["properties"]["felt"]
-    return (f is not None and f >= 100)
+    return f is not None and f >= 100
 
 
 feltreports = list(filter(feltreport, data["features"]))
@@ -38,7 +38,8 @@ def getfelt(q):
 
 mostfeltquake = max(data["features"], key=getfelt)
 print(
-    f"Most felt reports: {mostfeltquake['properties']['title']}, reports: {mostfeltquake['properties']['felt']}")
+    f"Most felt reports: {mostfeltquake['properties']['title']}, reports: {mostfeltquake['properties']['felt']}"
+)
 
 
 # 4: This is a sorting operation
@@ -53,4 +54,5 @@ sigevents = sorted(data["features"], key=getsig, reverse=True)
 print("The 10 most significant events were:")
 for i in range(0, 10):
     print(
-        f"Event: {sigevents[i]['properties']['title']}, Significance: {sigevents[i]['properties']['sig']}")
+        f"Event: {sigevents[i]['properties']['title']}, Significance: {sigevents[i]['properties']['sig']}"
+    )
